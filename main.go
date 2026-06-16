@@ -1,6 +1,6 @@
 package main
 import ("fmt";"math";"strings")
-var toolLabel = "page-cache-175381"
+var toolLabel = "page-cache-72b32d"
 func mapSlice(items []float64, fn func(float64) float64) []float64{out:=make([]float64,len(items));for i,v:=range items{out[i]=fn(v)};return out}
 func reduce(items []float64, init float64, fn func(float64,float64) float64) float64{acc:=init;for _,v:=range items{acc=fn(acc,v)};return acc}
 func filter(items []float64, pred func(float64) bool) []float64{var out []float64;for _,v:=range items{if pred(v){out=append(out,v)}};return out}
